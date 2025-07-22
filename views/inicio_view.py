@@ -1,6 +1,6 @@
 import flet as ft
 
-# 🎨 Paleta de colores
+# 🎨 Paleta de colores corporativos
 COLOR_FONDO = "#f5f7fa"
 COLOR_TITULO = "#2c3e50"
 COLOR_TEXTO = "#7f8c8d"
@@ -13,7 +13,7 @@ def pantalla_inicio(page: ft.Page, funcion_ir_login):
     page.window_height = 400
 
     logo = ft.Image(
-        src="Computer.png",
+        src="https://i.imgur.com/IXngufE.png",
         width=300,
         height=150,
         fit=ft.ImageFit.CONTAIN
@@ -21,20 +21,25 @@ def pantalla_inicio(page: ft.Page, funcion_ir_login):
 
     contenido = ft.Column(
         [
-            ft.Text("Bienvenido al Sistema de Gestión Carpetas", size=24, weight="bold"),
-            ft.Text("Cargdo con la energia de:", italic=True, size=20),
+            ft.Text("Bienvenido a OK Computer", size=24, weight="bold", color=COLOR_TITULO),
+            ft.Text("Soluciones digitales para un futuro innovador", italic=True, color=COLOR_TEXTO),
             logo,
-            ft.ElevatedButton("Iniciar sesión", on_click=lambda e: funcion_ir_login())
+            ft.ElevatedButton(
+                "Iniciar sesión",
+                on_click=lambda e: funcion_ir_login(),
+                style=ft.ButtonStyle(bgcolor=COLOR_BOTON, color="white")
+            )
         ],
-        alignment=ft.MainAxisAlignment.CENTER,         # Centrado vertical
-        horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # Centrado horizontal
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         spacing=20
     )
 
     page.add(
         ft.Container(
             contenido,
-            alignment=ft.alignment.center,  # Centrado general en el contenedor
-            expand=True                     # Ocupa toda la ventana para centrar bien
+            alignment=ft.alignment.center,
+            bgcolor=COLOR_FONDO,
+            expand=True
         )
     )
