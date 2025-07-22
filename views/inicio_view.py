@@ -13,7 +13,7 @@ def pantalla_inicio(page: ft.Page, funcion_ir_login):
     page.window_height = 400
 
     logo = ft.Image(
-        src="https://i.imgur.com/IXngufE.png",
+        src="https://imgur.com/a/BQPYl5e",
         width=300,
         height=150,
         fit=ft.ImageFit.CONTAIN
